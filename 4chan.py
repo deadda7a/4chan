@@ -5,7 +5,7 @@ import httplib
 import fileinput
 import telepot
 from daemonize import Daemonize
-from BeautifulSoup import BeautifulSoup
+from beautifulsoup4 import BeautifulSoup
 from converter import Converter, ffmpeg
 
 
