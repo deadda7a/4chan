@@ -1,6 +1,9 @@
 # 4chan
 Download and post Images and gifs/webms to Telegram Group
 
+## Installation
+run install-requirements.sh
+
 ## Usage
 
 Update Variables in 4chan.py:
