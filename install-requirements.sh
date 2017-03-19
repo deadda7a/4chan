@@ -16,19 +16,19 @@ which ffmpeg >/dev/null 2>&1
 if [ $? -ne 0 ]; then
     case "$ID" in
         "ubuntu" | "debian")
-            su -c 'apt-get install libav-tools'
+            sudo apt-get install libav-tools
             ;;
 
         "fedora")
-            su -c 'dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm'
-            su -c 'dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
-            su -c 'dnf install ffmpeg'
+            sudo dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+            sudo dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+            sudo dnf install ffmpeg
             ;;
 
         "centos")
         # Untested!
-            su -c 'yum install epel-release -y'
-            su -c 'yum install ffmpeg'
+            sudo yum install epel-release -y
+            sudo yum install ffmpeg
             ;;
         *)
             echo "Please install ffmpeg!"
@@ -38,7 +38,7 @@ fi
 
 unzip master.zip
 cd python-video-converter-master/
-su -c 'python setup.py install'
+sudo python setup.py install
 cd ..
 rm -rf python-video-converter-master/
 rm master.zip
